@@ -10,7 +10,7 @@ GET "/calculacte"
 
 # API requests
 Простой запрос:  
-[http://localhost:8081/calculacte?averageSalary=30500.00&vacationDays=30  ](http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30)
+[http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30](http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30)
   
 Запрос с указанием точного дня ухода в отпуск:  
-[http://localhost:8081/calculacte?averageSalary=30500.00&vacationDays=30&startVacationDate=2022-02-25](http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30&startVacationDate=2022-02-25&endDate=2022-03-15)  
+[http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30&startVacationDate=2022-02-25&endDate=2022-03-15](http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30&startVacationDate=2022-02-25&endDate=2022-03-15)  

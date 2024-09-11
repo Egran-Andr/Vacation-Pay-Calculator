@@ -1,9 +1,9 @@
 package com.egorandr.vacationcalc.controller;
 import com.egorandr.vacationcalc.models.VacationRequest;
+import com.egorandr.vacationcalc.responces.VacationPayResponse;
 import com.egorandr.vacationcalc.services.CalculationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,9 +21,10 @@ public class VacationController {
     }
 
     @GetMapping("/calculate")
-    public double calculateVacationPay(
+    public VacationPayResponse calculateVacationPay(
             @RequestParam double averageSalary,
             @RequestParam int vacationDays,
+            @RequestParam(required = false) boolean includeNDFL,
             @RequestParam(required = false) String startDate,
             @RequestParam(required = false) String endDate) {
 
@@ -31,7 +32,8 @@ public class VacationController {
                 averageSalary,
                 vacationDays,
                 startDate != null ? LocalDate.parse(startDate) : null,
-                endDate != null ? LocalDate.parse(endDate) : null
+                endDate != null ? LocalDate.parse(endDate) : null,
+                includeNDFL
         );
 
         return calculationService.calculateVacationPay(request);

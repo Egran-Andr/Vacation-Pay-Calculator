@@ -11,18 +11,24 @@ public class VacationRequest {
     private int vacationDays;      // Количество дней отпуска
     private LocalDate startDate;   // Дата начала отпуска
     private LocalDate endDate;     // Дата окончания отпуска
+    private boolean includeNDFL= false;// Учитывать ли НДФЛ в расчете (по умолчанию false)
 
-    // Конструктор с обязательными параметрами
-    public VacationRequest(double averageSalary, int vacationDays) {
-        this.averageSalary = averageSalary;
-        this.vacationDays = vacationDays;
-    }
-
-    // Конструктор с обязательными параметрами и необязательными (в паре)
-    public VacationRequest(double averageSalary, int vacationDays, LocalDate startDate, LocalDate endDate) {
+    // Полный конструктор
+    public VacationRequest(double averageSalary, int vacationDays, LocalDate startDate, LocalDate endDate, boolean includeNDFL) {
         this.averageSalary = averageSalary;
         this.vacationDays = vacationDays;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.includeNDFL = includeNDFL;
+    }
+
+    // Конструктор с обязательными параметрами
+    public VacationRequest(double averageSalary, int vacationDays) {
+        this(averageSalary, vacationDays, null, null, false);
+    }
+
+    // Конструктор с обязательными параметрами и необязательными датами отпуска
+    public VacationRequest(double averageSalary, int vacationDays, LocalDate startDate, LocalDate endDate) {
+        this(averageSalary, vacationDays, startDate, endDate, false);
     }
 }

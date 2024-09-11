@@ -13,4 +13,4 @@ GET "/calculacte"
 [http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30](http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30)
   
 Запрос с указанием точного дня ухода в отпуск:  
-[http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30&startVacationDate=2022-02-25&endDate=2022-03-15](http://localhost:8080/calculate?averageSalary=30500.00&vacationDays=30&startVacationDate=2022-02-25&endDate=2022-03-15)  
+[http://localhost:8080/calculate?averageSalary=120000&vacationDays=10&startDate=2024-05-01&endDate=2024-05-10](http://localhost:8080/calculate?averageSalary=120000&vacationDays=10&startDate=2024-05-01&endDate=2024-05-10)  
